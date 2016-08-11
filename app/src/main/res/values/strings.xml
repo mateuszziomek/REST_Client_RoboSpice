@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">REST Client RoboSpice</string>
+    <string name="result_text">Result: %s</string>
+</resources>

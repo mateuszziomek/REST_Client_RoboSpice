@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+    packagingOptions {
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/maven/com.octo.android.robospice/robospice/pom.properties'
+        exclude 'META-INF/maven/com.octo.android.robospice/robospice/pom.xml'
+    }
+
+    defaultConfig {
+        applicationId "com.mateuszziomek.restclientrobospice"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile files('libs/robospice-1.4.14.jar')
+    compile 'com.octo.android.robospice:robospice-spring-android:1.4.14'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+    compile 'com.octo.android.robospice:robospice-google-http-client:1.4.14'
+    compile 'com.octo.android.robospice:robospice-retrofit:1.4.14'
+
+}
